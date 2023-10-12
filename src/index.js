@@ -15,7 +15,7 @@ async function makeList() {
 function markup(val) {
   return val
     .map(element => {
-      return `<li>${element}</li>`;
+      return `<li class="li">${element}</li>`;
     })
     .join('');
 }
@@ -113,6 +113,12 @@ function makeModal(val) {
   `;
 }
 
+list.addEventListener('click', e => {
+  const nameOfCategory = e.target.textContent;
+  if (nameOfCategory === 'All categories'){
+    topFive()
+  }
+});
 
 // try todo
 // async function forShopList() {
@@ -139,8 +145,8 @@ function makeModal(val) {
 //   console.log(LSproduct)
 // }
 
-
 list.addEventListener('click', e => {
   const nameOfCategory = e.target;
-  nameOfCategory.style.color = "#4F2EE8";
-})
+  console.log(nameOfCategory);
+  nameOfCategory.classList.toggle('choosen-category');
+});
