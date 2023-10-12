@@ -138,6 +138,9 @@ function makeModal(val) {
 
 //   console.log(LSproduct)
 // }
-const button = document.querySelector('.js-add')
 
-button.addEventListener('click', e => console.log(e))
+
+list.addEventListener('click', e => {
+  const nameOfCategory = e.target;
+  nameOfCategory.style.color = "#4F2EE8";
+})
